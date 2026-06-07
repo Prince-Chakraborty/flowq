@@ -1,0 +1,18 @@
+# Phase 1 - Core
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+pydantic==2.7.1
+
+# Phase 2 - RabbitMQ
+aio-pika==9.4.1
+
+# Phase 3 - Persistence & Locking
+asyncpg==0.29.0
+sqlalchemy[asyncio]==2.0.30
+redis[hiredis]==5.0.4
+alembic==1.13.1
+pydantic-settings==2.2.1
+
+# Phase 4 - Monitoring
+prometheus-fastapi-instrumentator==6.1.0
+prometheus-client==0.20.0
