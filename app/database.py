@@ -7,14 +7,15 @@ import ssl
 def get_engine():
     url = settings.DATABASE_URL
     url = url.replace("postgresql://", "postgresql+asyncpg://")
-    # Remove unsupported params for asyncpg
     url = url.split("?")[0]
-    ssl_context = ssl.create_default_context()
-    return create_async_engine(
-        url,
-        echo=False,
-        connect_args={"ssl": ssl_context}
-    )
+
+    if "neon.tech" in url or "supabase" in url:
+        ssl_context = ssl.create_default_context()
+        connect_args = {"ssl": ssl_context}
+    else:
+        connect_args = {}
+
+    return create_async_engine(url, echo=False, connect_args=connect_args)
 
 
 engine = get_engine()
