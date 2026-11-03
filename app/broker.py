@@ -14,7 +14,7 @@ class RabbitMQBroker:
         self.dlq = None
 
     async def connect(self):
-        self.connection = await aio_pika.connect_robust(settings.RABBITMQ_URL)
+        self.connection = await aio_pika.connect_robust(settings.RABBITMQ_URL.strip().strip('"').strip("'"))
         self.channel = await self.connection.channel()
         await self.channel.set_qos(prefetch_count=settings.WORKER_COUNT)
 
