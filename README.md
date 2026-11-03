@@ -192,5 +192,5 @@ Scale workers:
 
 ## Built By
 
-Prince Chakraborty -- 2nd Year B.Tech CSE, IEM Kolkata
+Prince Chakraborty -- 3rd Year B.Tech CSIT, IEM Kolkata
 GitHub: https://github.com/Prince-Chakraborty
